@@ -1,145 +1,75 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css"
 
+import Biography from './components/biography'
+import Perfil from './components/perfil'
+import Track from './components/track'
+import ExpContainer from './components/expContainer'
+import AsideContainer from './components/asideContainder'
 
 function App() {
 
   const fakeAPI =  
     {
-      nome: 'Lisa Simpson',
-      ocupacao: 'Developer',
-      resumo: '8 anos e já sei React',
-      perfilProfissional: 'Faço miojo bom',
+      nome: 'Elon Reeve Musk',
+      ocupacao: 'CEO',
+      resumo: 'Levarei a humanidade a marte!',
+      perfilProfissional: 'Bom em tudo',
+      avatar: 'https://www.abc.net.au/cm/rimage/9815730-3x2-xlarge.jpg?v=2',
       contatos: [
         {
           id: 1,
           tipo: 'telefone',
-          contato: '19 0000-0000'
+          contato: '19 6666-6666'
         },
         {
           id: 2,
           tipo: 'email',
-          contato: 'nome@dev.com'
+          contato: 'ermusk@xpace.com'
         }
       ],
       educacao: [
         {
           id: 1,
-          instituicao: 'EMEF',
-          curso: 'Ensino basico'
+          instituicao: 'Universidade da Pensilvânia',
+          curso: 'Física'
         },
         {
           id: 2,
-          instituicao: 'ETEC',
-          curso: 'Como ser dev'
+          instituicao: 'Wharton Schoolof Business',
+          curso: 'Economia'
         }
       ],
       experiencia: [
         {
           id: 1,
-          cargo: 'Front',
+          cargo: 'CEO, CTO, ENG de produto',
           periodo: 'Agosto 2019 - Atualmente',
-          empresa: 'NASA',
-          local: 'Nova York',
-          conteudo: 'Fazia nada e ganhava bem'
+          empresa: 'SpaceX',
+          local: 'Hawthrone, Califórnia, EUA',
+          conteudo: 'Fundador da Space Exploration Rechnologies. Atuante na missão que lançou o primeiro veículo para a Estação Espacial Internacional'
         },
         {
           id: 2,
-          cargo: 'Back',
+          cargo: 'CEO',
           periodo: 'Agosto 2018 - Agosto 2019',
-          empresa: 'CIA',
-          local: 'Boston',
-          conteudo: 'Fazia nada e ganhava mal'
+          empresa: 'Tesla Motors',
+          local: 'Palo Alto, Califórnia, EUA',
+          conteudo: 'Promotor de um produto inovador, que de fato inova mas nunca é entregue no prazo. Ainda bem que o Walison não comprou um carro desse ainda, talvez ele espere mais um pouco pra adiquirir um...'
         }
       ]
   }
+
+  const [data] = useState(fakeAPI)
   return (
     <main>
-      <div className="perfil">
-        <img src="https://i.pravatar.cc/400" alt="Perfil" />
-      </div>
-      <div className="biografia">
-        <h1>
-          Nome Sobrenome
-        </h1>
-        <div className="ocupacao">Developer</div>
-        <p>109 anos e pronta pra ser dev</p>
-      </div>
 
-      <div className="titulo">
-        Perfil <br /> Profissional
-      </div>
+      <Perfil data={data}/>      
+      <Biography data={data}/>
+      <Track />
+      <AsideContainer data={data}/>   
+      <ExpContainer data={data}/>
 
-      <div className="perfil-profissional">
-        <p>
-          Faço nada da vida
-        </p>
-      </div>
-      <aside>
-        <div className="sidebar">
-          <h3>Contatos</h3>
-
-          <button>Mostrar Contatos</button>
-
-          <div className="lista-de-contatos">
-            <li>
-              <div className="item-contato">
-                <h4>TELEFONE</h4>
-                <p>(19) 0000-0000</p>
-              </div>
-            </li>
-            <li>
-              <div className="item-contato">
-                <h4>TELEFONE</h4>
-                <p>(19) 0000-0000</p>
-              </div>
-            </li>
-          </div>
-        </div>
-
-        <div className="sidebar">
-          <h3>Educação</h3>
-          <div className="lista-de-formacao">
-            <li>
-              <h4>Faculdade da vida</h4>
-              <p>Uniesquina 2019 - 2022</p>
-            </li>
-            <li>
-              <h4>EMEF</h4>
-              <p>Qualquer lugar 2010 - 2013</p>
-            </li>
-          </div>
-        </div>
-      </aside>
-      <div className="experience">
-        <h2>Experiência Profissional</h2>
-
-        <div className="experience-item">
-          <div>
-            <h4>Developer</h4>
-            <span>Novembro 2019 - Atualmente</span>
-
-            <strong>Empresa da hora</strong>
-            <span>Campinas - São Paulo</span>
-          </div>
-          <p>
-            Fazia nada
-        </p>
-        </div>
-        <div className="experience-item">
-
-          <div>
-            <h4>Developer</h4>
-            <span>Agosto 2019 - Novembro 2019</span>
-
-            <strong>Empresa estranha</strong>
-            <span>Sumaré - São Paulo</span>
-          </div>
-          <p>
-            Fazia menos
-        </p>
-        </div>
-      </div>
     </main>
   );
 }

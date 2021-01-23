@@ -1,6 +1,10 @@
-# Curriculo em react
+# Para rodar o projeto
+- git clone
+- npm install (para baixar as dependências)
+- npm start
 
-- Leia esse README.md
+# Desafio Curriculo em react
+
 - Quebre o JSX em componentes
 - Organize esses componentes em pastas
 - Passe as informações do App.js para os outros componentes VIA PROPS

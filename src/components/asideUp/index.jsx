@@ -15,7 +15,12 @@ function AsideUp(props) {
         <>
             <div className="sidebar">
                 <h3>Contatos</h3>
-                <button onClick={showContatcs}>Mostrar Contatos</button>
+                {
+                    contact 
+                    ? <button onClick={showContatcs}>Esconder Contatos</button>
+                    : <button onClick={showContatcs}>Mostrar Contatos</button>
+                }
+
                 {
                     contact &&
                     infos.map(i => (

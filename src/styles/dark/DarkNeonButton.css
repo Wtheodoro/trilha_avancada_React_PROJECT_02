@@ -12,7 +12,7 @@ a {
 }
 
 a:hover {
-    color: #255784;
+    color: #000;
     background: #4717F6;
     /* neon effect */
     box-shadow: 0 0 10px #4717F6, 0 0 40px #4717F6, 0 0 10px #4717F6;

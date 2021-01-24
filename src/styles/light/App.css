@@ -245,3 +245,9 @@ h3::after {
   color: #fff;
   line-height: 25px;
 }
+
+.change-theme {
+  position: absolute;
+  top: 5px;
+  right: 0;
+}

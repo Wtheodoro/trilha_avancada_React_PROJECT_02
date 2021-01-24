@@ -1,13 +1,26 @@
 import React, { useState } from "react";
-import "./App.css"
 
 import Biography from './components/biography'
 import Perfil from './components/perfil'
 import Track from './components/track'
 import ExpContainer from './components/expContainer'
 import AsideContainer from './components/asideContainder'
+import Button from './components/button'
+
+// import "./styles/light/App.css"
+// import "./styles/light/LightNeonButton.css"
+
+import "./styles/dark/DarkApp.css"
+import "./styles/dark/DarkNeonButton.css"
+
 
 function App() {
+
+  const [theme, setTheme] = useState(true)
+
+  const changeTheme = () => {
+    setTheme(!theme)
+  }
 
   const fakeAPI =  
     {
@@ -63,13 +76,16 @@ function App() {
   const [data] = useState(fakeAPI)
   return (
     <main>
-
+      <>
       <Perfil data={data}/>      
       <Biography data={data}/>
       <Track />
       <AsideContainer data={data}/>   
       <ExpContainer data={data}/>
-
+      <div className="change-theme" onClick={changeTheme}>
+        <Button name={"Mudar Tema"}/>
+      </div>
+      </>
     </main>
   );
 }

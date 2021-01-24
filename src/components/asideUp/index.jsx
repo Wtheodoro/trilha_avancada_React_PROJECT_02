@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import EachContact from '../eachContact'
 
+import Button from '../button'
+
 function AsideUp(props) {
 
     const infos = props.contatos
@@ -17,9 +19,11 @@ function AsideUp(props) {
                 <h3>Contatos</h3>
                 {
                     contact 
-                    ? <button onClick={showContatcs}>Esconder Contatos</button>
-                    : <button onClick={showContatcs}>Mostrar Contatos</button>
+                    ? <div onClick={showContatcs}><Button name={"Esconder Contatos"} /></div>
+                    : <div onClick={showContatcs}><Button name={"Mostrar Contatos"} /></div>
                 }
+                
+                
 
                 {
                     contact &&

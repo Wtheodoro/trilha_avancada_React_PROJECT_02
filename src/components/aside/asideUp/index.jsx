@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import EachContact from '../eachContact'
+import EachContact from '../../eachContact'
 
-import Button from '../button'
+import Button from '../../button'
 
 function AsideUp(props) {
 

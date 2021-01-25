@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import Biography from '../components/biography'
 import Perfil from '../components/perfil'
 import Track from '../components/track'
-import ExpContainer from '../components/expContainer'
-import AsideContainer from '../components/asideContainder'
+import ExpContainer from '../components/experience/expContainer'
+import AsideContainer from '../components/aside/asideContainder'
 
 import "../styles/dark/DarkApp.css"
 import "../styles/dark/DarkNeonButton.css"
